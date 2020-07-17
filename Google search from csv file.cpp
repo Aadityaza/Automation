@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include<fstream>
+#include <string>
 using namespace std;
 
 void open_opera(string request) {
@@ -23,11 +24,14 @@ int main()
     if (newfile.is_open()) { //checking whether the file is open
         string tp;
         while (getline(newfile, tp)) { //read data from file object and put it into string.
-            cout << tp << "\n"; //print the data of the string
+            cout << "/n searching...."<<tp << "\n"; //print the data of the string
+            open_opera(tp);
         }
         newfile.close(); //close the file object.
     }
-
+    else {
+        cout << "file not found";
+    }
 
 }
 
