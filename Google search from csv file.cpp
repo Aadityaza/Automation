@@ -15,8 +15,10 @@ void open_opera(string request) {
 }
 int main()
 {
-    std::cout << "Hello World!\n";
-    open_opera("musa");
+    
+    cout << "Who do you want to search :  ";
+    string name;
+    cin >> name;
 
     //opening and reading csv file
     fstream newfile;
@@ -25,7 +27,7 @@ int main()
         string tp;
         while (getline(newfile, tp)) { //read data from file object and put it into string.
             cout << "\n searching...."<<tp << "\n"; //print the data of the string
-            open_opera(tp);
+            open_opera("("+name+"+"+"AND"+"+"+tp+")");
         }
         newfile.close(); //close the file object.
     }
